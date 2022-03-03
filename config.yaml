@@ -1,7 +1,11 @@
 orgs:
   redhat-cop-dev:
     admins:
-    - sabre1041
+      - garethahealy
+      - JaredBurck
+      - oybed
+      - pabrahamsson
+      - sabre1041
     billing_email: andy.block@gmail.com
     company: ""
     default_repository_permission: read
@@ -11,24 +15,22 @@ orgs:
     has_repository_projects: true
     location: ""
     members:
-    - etsauer
-    - jlozadad
-    members_can_create_repositories: true
+      - etsauer
+    members_can_create_repositories: false
     name: ""
     teams:
       test-team1:
         description: ""
         maintainers:
-        - sabre1041
+          - sabre1041
         privacy: closed
         repos:
-          os_collections: read
+          test-repo: read
         teams:
           test-team1-subteam1:
             description: ""
             maintainers:
-            - sabre1041
+              - sabre1041
             privacy: closed
             repos:
-              os_collections: read
-
+              test-repo: read
