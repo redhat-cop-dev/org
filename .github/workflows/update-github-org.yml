@@ -1,0 +1,15 @@
+name: Update GitHub Org Configuration
+on:
+  push:
+    #paths:
+    #s  - "config.yaml"
+    branches:
+      - peribolos-refactor
+jobs:
+  manage-github-org-config-workflow:
+    name: manage-github-org-config-workflow
+    uses: redhat-cop-dev/org/.github/workflows/manage-github-org.yml@peribolos-refactor
+    secrets:
+      PERIBOLOS_TOKEN: ${{ secrets.PERIBOLOS_TOKEN }}
+    with:
+      APPLY_CHANGES: true
