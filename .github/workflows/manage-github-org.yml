@@ -56,7 +56,7 @@ jobs:
         run: |
           docker network create ${{ env.DOCKER_NETWORK }}
 
-      - name: Create ghproxy continer
+      - name: Create ghproxy container
         run: |
           docker run -d --rm \
             --network=${{ env.DOCKER_NETWORK }} \

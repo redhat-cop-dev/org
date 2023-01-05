@@ -1,13 +1,33 @@
 name: Update GitHub Org Configuration
 on:
+  schedule:
+    - cron: "0 3 * * *"
   push:
+    paths:
+      - "config.yaml"
     branches:
       - main
+  pull_requests:
+    branches:
+      - main
+    paths:
+      - "config.yaml"
 jobs:
   manage-github-org-config-workflow:
     name: manage-github-org-config-workflow
-    uses: redhat-cop-dev/org/.github/workflows/manage-github-org.yml@main
-    secrets:
-      PERIBOLOS_TOKEN: ${{ secrets.PERIBOLOS_TOKEN }}
-    with:
-      APPLY_CHANGES: true
+    runs-on: ubuntu-latest
+    steps:
+      - name: Dry run
+        if: github.event_name == 'pull_request'
+        uses: redhat-cop/org/.github/workflows/manage-github-org.yml@main
+        secrets:
+          PERIBOLOS_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+        with:
+          APPLY_CHANGES: false
+      - name: Update org
+        if: github.event_name == 'push' || github.event_name == 'schedule'
+        uses: redhat-cop/org/.github/workflows/manage-github-org.yml@main
+        secrets:
+          PERIBOLOS_TOKEN: ${{ secrets.PERIBOLOS_TOKEN }}
+        with:
+          APPLY_CHANGES: true
