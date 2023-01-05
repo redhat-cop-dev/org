@@ -18,7 +18,7 @@ jobs:
     if: github.event_name == 'pull_request'
     uses: redhat-cop/org/.github/workflows/manage-github-org.yml@main
     secrets:
-      PERIBOLOS_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+      PERIBOLOS_TOKEN: ${{ secrets.PERIBOLOS_TOKEN }}
     with:
       APPLY_CHANGES: false
   update-org:
