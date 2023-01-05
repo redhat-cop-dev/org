@@ -16,6 +16,7 @@ orgs:
     location: ""
     members:
       - etsauer
+      - pabrahamsson
     members_can_create_repositories: false
     name: ""
     teams:
@@ -23,7 +24,6 @@ orgs:
         description: ""
         maintainers:
           - sabre1041
-          - pabrahamsson
         privacy: closed
         repos:
           test-repo: read
