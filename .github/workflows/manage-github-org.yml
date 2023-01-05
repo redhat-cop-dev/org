@@ -41,6 +41,8 @@ env:
   APPLY_CHANGES: ${{ inputs.APPLY_CHANGES }}
   DOCKER_NETWORK: "peribolos"
 
+permissions: read-all
+
 jobs:
   manage-github-org-config:
     runs-on: ubuntu-latest
