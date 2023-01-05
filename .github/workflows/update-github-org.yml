@@ -7,23 +7,9 @@ on:
       - "config.yaml"
     branches:
       - main
-  pull_request:
-    branches:
-      - main
-    paths:
-      - "config.yaml"
 jobs:
-  dry-run:
-    name: Peribolos dry run
-    if: github.event_name == 'pull_request'
-    uses: redhat-cop/org/.github/workflows/manage-github-org.yml@main
-    secrets:
-      PERIBOLOS_TOKEN: ${{ secrets.PERIBOLOS_TOKEN }}
-    with:
-      APPLY_CHANGES: false
-  update-org:
-    name: Peribolos update org
-    if: github.event_name == 'push' || github.event_name == 'schedule'
+  manage-github-org-config-workflow:
+    name: manage-github-org-config-workflow
     uses: redhat-cop/org/.github/workflows/manage-github-org.yml@main
     secrets:
       PERIBOLOS_TOKEN: ${{ secrets.PERIBOLOS_TOKEN }}
