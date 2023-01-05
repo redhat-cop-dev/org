@@ -7,7 +7,7 @@ on:
       - "config.yaml"
     branches:
       - main
-  pull_requests:
+  pull_request:
     branches:
       - main
     paths:
