@@ -23,6 +23,7 @@ orgs:
         description: ""
         maintainers:
           - sabre1041
+          - pabrahamsson
         privacy: closed
         repos:
           test-repo: read
