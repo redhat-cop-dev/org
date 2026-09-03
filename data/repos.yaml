@@ -1,0 +1,9 @@
+repos:
+  org:
+    visibility: public
+  test-repo:
+    visibility: public
+  github-actions-ssh:
+    visibility: private
+  member-mapping:
+    visibility: private

@@ -1,0 +1,21 @@
+teams:
+  test:
+    description: ""
+    maintainers:
+      - sabre1041
+    privacy: closed
+  test-team1:
+    description: ""
+    maintainers:
+      - sabre1041
+    privacy: closed
+    repos:
+      test-repo: pull
+  test-team1-subteam1:
+    parent: test-team1
+    description: ""
+    maintainers:
+      - sabre1041
+    privacy: closed
+    repos:
+      test-repo: pull
