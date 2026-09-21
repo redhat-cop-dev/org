@@ -8,5 +8,9 @@ terraform {
     }
   }
 
-  cloud {}
+  cloud {
+    workspaces {
+      tags = ["redhat-cop-dev-org"]
+    }
+  }
 }
