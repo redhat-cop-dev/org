@@ -51,16 +51,15 @@ jobs:
       - name: Terraform Init
         run: |
           if [ -n "${TF_CLOUD_ORGANIZATION}" ]; then
-            cat > backend.ci.tf <<EOF
-terraform {
-  cloud {
-    organization = "${TF_CLOUD_ORGANIZATION}"
-    workspaces {
-      tags = ["redhat-cop-dev-org"]
-    }
-  }
-}
-EOF
+            printf '%s\n' \
+              'terraform {' \
+              '  cloud {' \
+              "    organization = \"${TF_CLOUD_ORGANIZATION}\"" \
+              '    workspaces {' \
+              '      tags = ["redhat-cop-dev-org"]' \
+              '    }' \
+              '  }' \
+              '}' > backend.ci.tf
             terraform init
           else
             terraform init -backend=false
