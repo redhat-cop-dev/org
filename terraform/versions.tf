@@ -7,10 +7,4 @@ terraform {
       version = "~> 6.0"
     }
   }
-
-  cloud {
-    workspaces {
-      tags = ["redhat-cop-dev-org"]
-    }
-  }
 }
